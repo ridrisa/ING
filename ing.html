@@ -14,11 +14,30 @@
             --white: #ffffff;
             --gray-100: #f3f4f6;
             --gray-200: #e5e7eb;
+            --gray-400: #9ca3af;
         }
 
         body {
-            font-family: Arial, sans-serif;
             scroll-behavior: smooth;
+        }
+
+        .top-bar {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 0.5rem 0;
+        }
+
+        .navbar-brand img {
+            width: 150px;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--black);
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-red);
         }
 
         .hero {
@@ -28,30 +47,69 @@
             padding: 6rem 1rem;
         }
 
-        .solutions, .products, .services, .branches, .contact {
-            padding: 4rem 1rem;
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-red);
+            border: none;
+            padding: 0.75rem 1.5rem;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gray-100);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2.5rem;
+            font-size: 2.25rem;
+            margin-bottom: 3rem;
         }
 
-        .services ul, .branches ul, .products ul {
-            list-style: none;
-            padding: 0;
+        .solutions .card,
+        .products .card {
+            border: 1px solid var(--gray-200);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .services ul li, .branches ul li, .products ul li {
-            margin-bottom: 0.5rem;
+        .solutions .card:hover,
+        .products .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .features {
+            background-color: var(--gray-100);
+        }
+
+        .features .icon {
+            font-size: 2rem;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .contact .form-control:focus {
+            border-color: var(--primary-red);
+        }
+
+        .contact .btn-submit {
+            background-color: var(--primary-red);
+            color: var(--white);
         }
 
         footer {
-            background: var(--black);
-            color: var(--gray-100);
+            background-color: var(--black);
+            color: var(--gray-400);
+            padding: 2rem 1rem;
             text-align: center;
-            padding: 1.5rem 0;
         }
 
         footer a {
@@ -59,66 +117,78 @@
             text-decoration: none;
         }
 
-        .cta-section {
-            background: var(--gray-100);
-            text-align: center;
-            padding: 3rem 1rem;
-        }
-
-        .testimonials {
-            background: var(--gray-200);
-            padding: 4rem 1rem;
-        }
-
-        .testimonial {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .testimonial p {
-            font-style: italic;
+        footer a:hover {
+            color: var(--white);
         }
     </style>
 </head>
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +966 12 617 3131</span>
+                <span><i class="fas fa-envelope"></i> info@intnetgroup.com</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.jpeg" alt="ING Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#solutions">Solutions</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Integrated Network Group</h1>
-        <p>Your Trusted Partner for Security and Networking Solutions</p>
-        <a href="#solutions" class="btn btn-light">Explore Solutions</a>
+        <div class="container">
+            <h1>Integrated Network Group</h1>
+            <p>Delivering comprehensive security and networking solutions to secure your future.</p>
+            <a href="#solutions" class="btn btn-primary">Explore Solutions</a>
+        </div>
     </section>
 
     <!-- Solutions Section -->
     <section id="solutions" class="solutions">
         <div class="container">
-            <h2 class="section-title">Our Key Solutions</h2>
-            <div class="row">
+            <h2 class="section-title">Our Solutions</h2>
+            <div class="row g-4">
                 <div class="col-md-4">
-                    <h5>CCTV Systems</h5>
-                    <p>High-resolution cameras with night vision and remote monitoring.</p>
-                    <ul>
-                        <li>Digital and HD Cameras (2MP to 8MP)</li>
-                        <li>Wireless installation</li>
-                        <li>Remote monitoring via apps</li>
-                    </ul>
+                    <div class="card p-3 text-center">
+                        <i class="fas fa-video fa-2x text-danger"></i>
+                        <h5>CCTV Systems</h5>
+                        <p>High-resolution cameras with night vision and remote monitoring.</p>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h5>Time Attendance Systems</h5>
-                    <p>Accurate employee tracking and reporting for enhanced management.</p>
-                    <ul>
-                        <li>Biometric systems</li>
-                        <li>Multilingual support (Arabic & English)</li>
-                        <li>Customizable reports</li>
-                    </ul>
+                    <div class="card p-3 text-center">
+                        <i class="fas fa-clock fa-2x text-danger"></i>
+                        <h5>Time Attendance</h5>
+                        <p>Accurate tracking and management of employee attendance.</p>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h5>Access Control & Smart Locks</h5>
-                    <p>Advanced entry control solutions for maximum security.</p>
-                    <ul>
-                        <li>Biometric and RFID integration</li>
-                        <li>Weather-resistant devices</li>
-                        <li>Remote monitoring and control</li>
-                    </ul>
+                    <div class="card p-3 text-center">
+                        <i class="fas fa-lock fa-2x text-danger"></i>
+                        <h5>Access Control</h5>
+                        <p>Smart locks and advanced access control systems.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -127,25 +197,37 @@
     <!-- Products Section -->
     <section id="products" class="products">
         <div class="container">
-            <h2 class="section-title">Our Product Range</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>CCTV Cameras</h5>
-                    <ul>
-                        <li>DS2-CE16D0T-IR</li>
-                        <li>DS2-CE56H0T</li>
-                        <li>DS2-TD50-6166B2L</li>
-                        <li>DS2-CE16H0T-ITF</li>
-                    </ul>
+            <h2 class="section-title">Our Products</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h5>CCTV Cameras</h5>
+                        <ul>
+                            <li>DS2-CE16D0T-IR</li>
+                            <li>DS2-CE56H0T</li>
+                            <li>DS2-TD50-6166B2L</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h5>Access Control</h5>
-                    <ul>
-                        <li>MA500</li>
-                        <li>Electric Strike</li>
-                        <li>Yale Lock</li>
-                        <li>SKW-V2</li>
-                    </ul>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h5>Access Control Systems</h5>
+                        <ul>
+                            <li>Electric Strike</li>
+                            <li>MA500</li>
+                            <li>Yale Lock</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h5>Fire Alarm Systems</h5>
+                        <ul>
+                            <li>Smoke Detectors</li>
+                            <li>Heat Detectors</li>
+                            <li>Flame Detectors</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -157,44 +239,10 @@
             <h2 class="section-title">Our Services</h2>
             <ul>
                 <li>Design, Installation, and Maintenance of Security Systems</li>
-                <li>Advanced Fire Alarm Systems</li>
-                <li>PBX & IP PBX Setup</li>
-                <li>Security Inspection Devices</li>
+                <li>PBX and IP PBX Systems</li>
+                <li>Sound Systems for Offices, Schools, and Hotels</li>
+                <li>Comprehensive Security Inspection Solutions</li>
                 <li>Automatic Vehicle Location Systems</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Clients Say</h2>
-            <div class="testimonial">
-                <p>"ING provided us with top-notch security solutions. Highly recommend!"</p>
-                <h6>- Sarah A., Jeddah</h6>
-            </div>
-            <div class="testimonial">
-                <p>"Their team was professional, and the CCTV systems are seamless!"</p>
-                <h6>- Mohammed B., Riyadh</h6>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>Ready to Secure Your Business?</h2>
-        <p>Contact us today to learn more about our solutions and products.</p>
-        <a href="#contact" class="btn btn-danger">Get in Touch</a>
-    </section>
-
-    <!-- Branches Section -->
-    <section id="branches" class="branches">
-        <div class="container">
-            <h2 class="section-title">Our Branches</h2>
-            <ul>
-                <li><strong>Main Office:</strong> Khoja Bld, Tahliyah St. Safa - Jeddah | 0126173131 | info@intnetgroup.com</li>
-                <li><strong>Construction City Branch:</strong> E9, Madina Rd, Alnuzha, Jeddah | 0126554646 | sales1@intnetgroup.com</li>
-                <li><strong>Baladiyah St. Branch:</strong> Ba Gabas Center - Baladiyah St., Alaziziyah, Jeddah | 0126554646 | sales2@intnetgroup.com</li>
             </ul>
         </div>
     </section>
@@ -202,25 +250,35 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <form>
-                <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Name" required>
+            <h2 class="section-title text-center">Get in Touch</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <p>Contact our team for customized security solutions.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Khoja Bld, Tahliyah St., Jeddah</p>
+                    <p><i class="fas fa-phone"></i> +966 12 617 3131</p>
+                    <p><i class="fas fa-envelope"></i> info@intnetgroup.com</p>
                 </div>
-                <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Email" required>
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit w-100">Send Message</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <textarea class="form-control" rows="4" placeholder="Message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Send Message</button>
-            </form>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 ING. All Rights Reserved. <a href="#">Privacy Policy</a></p>
+        <p>&copy; 2024 ING. All rights reserved. | <a href="#">Privacy Policy</a></p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
