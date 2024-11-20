@@ -3,201 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Integrated Network Group (ING) offers advanced security and networking solutions.">
+    <meta name="description" content="Integrated Network Group (ING) - Leading provider of advanced security and networking solutions.">
     <title>Integrated Network Group (ING)</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.4.0/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
     <style>
-        /* Custom Colors */
-        :root {
-            --primary-red: #C41E3A;
-            --light-red: #E57373;
-            --white: #FFFFFF;
-            --black: #1E1E1E;
-            --gray-100: #F3F4F6;
-            --gray-800: #1F2937;
+        /* Custom Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
         }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: var(--gray-100);
-            color: var(--black);
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #C41E3A, #E57373);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero {
-            background-color: var(--primary-red);
-            background-image: linear-gradient(135deg, var(--primary-red), var(--light-red));
-            color: var(--white);
+        /* Card Hover Effect */
+        .card-hover {
+            transition: all 0.3s ease;
         }
 
-        .service-card, .product-card {
-            background-color: var(--white);
-            border: 1px solid var(--gray-100);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover, .product-card:hover {
+        .card-hover:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-color: var(--light-red);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
 
-        .swiper-slide {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--white);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* Navbar Hover Effect */
+        .nav-link {
+            position: relative;
         }
 
-        footer {
-            background-color: var(--black);
-            color: var(--gray-100);
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #C41E3A;
+            transition: width 0.3s ease;
         }
 
-        footer a {
-            color: var(--primary-red);
-        }
-
-        footer a:hover {
-            color: var(--light-red);
+        .nav-link:hover::after {
+            width: 100%;
         }
     </style>
 </head>
-<body>
-    <!-- Hero Section -->
-    <header class="hero h-screen flex items-center justify-center bg-opacity-80">
-        <div class="text-center px-6">
-            <h1 class="text-6xl font-bold">Integrated Network Group</h1>
-            <p class="text-xl mt-4">Securing Your Future with Advanced Security and Networking Solutions</p>
-            <a href="#solutions" class="mt-6 px-8 py-4 bg-white text-primary-red rounded-lg text-lg hover:bg-gray-100 transition">Explore Our Solutions</a>
-        </div>
-    </header>
+<body class="bg-gray-50">
 
-    <!-- Navigation -->
-    <nav class="bg-gray-800">
-        <div class="container mx-auto">
-            <ul class="flex justify-center space-x-8 text-white py-4">
-                <li><a href="#solutions" class="hover:text-light-red transition">Solutions</a></li>
-                <li><a href="#products" class="hover:text-light-red transition">Products</a></li>
-                <li><a href="#services" class="hover:text-light-red transition">Services</a></li>
-                <li><a href="#testimonials" class="hover:text-light-red transition">Testimonials</a></li>
-                <li><a href="#contact" class="hover:text-light-red transition">Contact</a></li>
-            </ul>
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold gradient-text">ING</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#solutions" class="nav-link hover:text-red-600 transition-colors">Solutions</a>
+                    <a href="#products" class="nav-link hover:text-red-600 transition-colors">Products</a>
+                    <a href="#services" class="nav-link hover:text-red-600 transition-colors">Services</a>
+                    <a href="#testimonials" class="nav-link hover:text-red-600 transition-colors">Testimonials</a>
+                    <a href="#contact" class="nav-link hover:text-red-600 transition-colors">Contact</a>
+                </div>
+                <button class="md:hidden text-gray-600 hover:text-gray-900">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-700 to-red-400 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 animate__animated animate__fadeInDown">
+                Integrated Network Group
+            </h1>
+            <p class="text-xl md:text-2xl mb-12 animate__animated animate__fadeInUp animate__delay-1s">
+                Securing Your Future with Advanced Technology Solutions
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center animate__animated animate__fadeInUp animate__delay-2s">
+                <a href="#solutions" class="px-8 py-4 bg-white text-red-600 rounded-lg text-lg hover:bg-gray-100 transition-colors shadow-lg">
+                    Explore Solutions
+                </a>
+                <a href="#contact" class="px-8 py-4 bg-transparent border-2 border-white text-white rounded-lg text-lg hover:bg-white/10 transition-colors">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </header>
+
     <!-- Solutions Section -->
-    <section id="solutions" class="py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">Our Solutions</h2>
+    <section id="solutions" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Our Solutions</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card p-6 rounded-lg shadow">
+                <div class="card-hover bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-red-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-video text-2xl text-red-600"></i>
+                    </div>
                     <h3 class="text-xl font-semibold mb-4">CCTV Systems</h3>
-                    <p>High-resolution surveillance cameras with remote monitoring and night vision.</p>
+                    <p class="text-gray-600">Advanced surveillance solutions with AI-powered analytics and remote monitoring.</p>
                 </div>
-                <div class="service-card p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4">Time Attendance Systems</h3>
-                    <p>Effective tracking and management of staff attendance with detailed reporting.</p>
+                <div class="card-hover bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-red-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-clock text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Time Attendance</h3>
+                    <p class="text-gray-600">Smart attendance tracking with facial recognition and mobile access.</p>
                 </div>
-                <div class="service-card p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4">Access Control Systems</h3>
-                    <p>Smart locks and advanced access management systems for secure entry control.</p>
+                <div class="card-hover bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-red-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-lock text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Access Control</h3>
+                    <p class="text-gray-600">Biometric security systems with multi-factor authentication and real-time monitoring.</p>
                 </div>
-                <div class="service-card p-6 rounded-lg shadow">
+                <div class="card-hover bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-red-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-shield-alt text-2xl text-red-600"></i>
+                    </div>
                     <h3 class="text-xl font-semibold mb-4">Fire Alarm Systems</h3>
-                    <p>Comprehensive fire safety solutions to protect your premises and assets.</p>
+                    <p class="text-gray-600">Reliable fire detection and alert systems for complete safety.</p>
                 </div>
-                <div class="service-card p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4">Automatic Vehicle Location</h3>
-                    <p>Real-time vehicle tracking and fleet management solutions for your business.</p>
+                <div class="card-hover bg-white rounded-xl shadow-lg p-8 text-center">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-red-100 rounded-full flex items-center justify-center">
+                        <i class="fas fa-car text-2xl text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Vehicle Tracking</h3>
+                    <p class="text-gray-600">Real-time GPS tracking and fleet management solutions.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Products Section -->
-    <section id="products" class="bg-gray-100 py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">Our Products</h2>
+    <section id="products" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Featured Products</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="product-card p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4">CCTV Cameras</h3>
-                    <p>Models: DS2-CE16D0T-IR, DS2-CE56H0T</p>
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="/api/placeholder/400/300" alt="CCTV Camera" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">CCTV Cameras</h3>
+                        <p class="text-gray-600 mb-4">High-resolution surveillance with night vision.</p>
+                        <button class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors">
+                            Learn More
+                        </button>
+                    </div>
                 </div>
-                <div class="product-card p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4">Access Control Devices</h3>
-                    <p>Devices: Electric Strike, MA500</p>
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="/api/placeholder/400/300" alt="Access Control" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Access Control</h3>
+                        <p class="text-gray-600 mb-4">Smart locks and biometric systems.</p>
+                        <button class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors">
+                            Learn More
+                        </button>
+                    </div>
                 </div>
-                <div class="product-card p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4">Fire Alarm Systems</h3>
-                    <p>Includes Smoke Detectors, Flame Detectors</p>
+                <div class="card-hover bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="/api/placeholder/400/300" alt="Fire Alarm" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Fire Alarms</h3>
+                        <p class="text-gray-600 mb-4">Advanced fire detection systems.</p>
+                        <button class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors">
+                            Learn More
+                        </button>
+                    </div>
                 </div>
-                <div class="product-card p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4">Security Inspection Tools</h3>
-                    <p>Advanced tools for thorough security inspections.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">What Our Clients Say</h2>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">"Excellent service and top-quality security solutions!"</div>
-                    <div class="swiper-slide">"Professional team and cutting-edge technology."</div>
-                    <div class="swiper-slide">"ING provided exceptional support for our CCTV installation."</div>
-                </div>
-                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-        <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-100">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-8">Contact Us</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Contact Information -->
-                <div class="text-center md:text-left">
-                    <h3 class="text-2xl font-bold mb-4">Main Office</h3>
-                    <p>Khoja Bld, Tahliyah St., Safa - Jeddah</p>
-                    <p class="mt-2"><strong>Phone:</strong> +966 12 617 3131</p>
-                    <p><strong>Email:</strong> info@intnetgroup.com</p>
-
-                    <h3 class="text-2xl font-bold mt-6 mb-4">Other Branches</h3>
-                    <p><strong>Construction City Branch:</strong> E9, Madina Rd, Alnuzha, Jeddah</p>
-                    <p class="mt-2"><strong>Phone:</strong> +966 12 655 4646</p>
-                    <p><strong>Email:</strong> sales1@intnetgroup.com</p>
-
-                    <p class="mt-6"><strong>Baladiyah St. Branch:</strong> Ba Gabas Center, Baladiyah St., Alaziziyah, Jeddah</p>
-                    <p class="mt-2"><strong>Phone:</strong> +966 12 655 4646</p>
-                    <p><strong>Email:</strong> sales2@intnetgroup.com</p>
+    <section id="contact" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gradient-text">Get in Touch</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Main Office</h4>
+                                <p class="text-gray-600">Khoja Bld, Tahliyah St., Safa - Jeddah</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-phone-alt text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Phone</h4>
+                                <p class="text-gray-600">+966 12 617 3131</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-envelope text-red-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Email</h4>
+                                <p class="text-gray-600">info@intnetgroup.com</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Contact Form -->
-                <form class="bg-white p-6 rounded-lg shadow">
+                <form class="bg-white rounded-xl shadow-lg p-8">
+                    <h3 class="text-2xl font-bold mb-6">Send Us a Message</h3>
                     <div class="mb-4">
-                        <label for="name" class="block mb-2 font-semibold text-gray-700">Name:</label>
-                        <input type="text" id="name" name="name" class="w-full border rounded-lg p-3" placeholder="Your Name" required>
+                        <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Your Name" required>
                     </div>
                     <div class="mb-4">
-                        <label for="email" class="block mb-2 font-semibold text-gray-700">Email:</label>
-                        <input type="email" id="email" name="email" class="w-full border rounded-lg p-3" placeholder="Your Email" required>
+                        <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Your Email" required>
                     </div>
                     <div class="mb-4">
-                        <label for="message" class="block mb-2 font-semibold text-gray-700">Message:</label>
-                        <textarea id="message" name="message" rows="5" class="w-full border rounded-lg p-3" placeholder="Your Message" required></textarea>
+                        <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-600" placeholder="Your Message" required></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-primary-red text-white py-3 rounded-lg hover:bg-light-red transition">
+                    <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition">
                         Send Message
                     </button>
                 </form>
@@ -205,33 +241,5 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-100 py-6">
-        <div class="container mx-auto text-center">
-            <p class="mb-4">&copy; 2024 Integrated Network Group. All Rights Reserved.</p>
-            <p>
-                <a href="#" class="hover:text-light-red">Privacy Policy</a> | 
-                <a href="#" class="hover:text-light-red">Terms of Service</a>
-            </p>
-            <div class="mt-4">
-                <a href="#" class="text-primary-red mx-2 hover:text-light-red transition"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-primary-red mx-2 hover:text-light-red transition"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-primary-red mx-2 hover:text-light-red transition"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="text-primary-red mx-2 hover:text-light-red transition"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-        // Initialize Swiper for Testimonials
-        const swiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: { el: '.swiper-pagination', clickable: true }
-        });
-
-        // Initialize ScrollReveal for Animations
-        ScrollReveal().reveal('.service-card, .product-card', { delay: 200, duration: 800, interval: 100 });
-    </script>
 </body>
 </html>
