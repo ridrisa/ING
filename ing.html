@@ -10,31 +10,61 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
     <style>
+        /* Custom Colors */
+        :root {
+            --primary-red: #C41E3A;
+            --light-red: #E57373;
+            --white: #FFFFFF;
+            --black: #1E1E1E;
+            --gray-100: #F3F4F6;
+            --gray-800: #1F2937;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #f9fafb 20%, #e5e7eb 100%);
+            background-color: var(--gray-100);
+            color: var(--black);
         }
+
         .hero {
-            background-image: url('hero-background.jpg');
-            background-size: cover;
-            background-position: center;
-            color: #ffffff;
+            background-color: var(--primary-red);
+            background-image: linear-gradient(135deg, var(--primary-red), var(--light-red));
+            color: var(--white);
         }
-        .service-card {
+
+        .service-card, .product-card {
+            background-color: var(--white);
+            border: 1px solid var(--gray-100);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        .service-card:hover {
+
+        .service-card:hover, .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--light-red);
         }
+
         .swiper-slide {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #ffffff;
+            background: var(--white);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: var(--black);
+            color: var(--gray-100);
+        }
+
+        footer a {
+            color: var(--primary-red);
+        }
+
+        footer a:hover {
+            color: var(--light-red);
         }
     </style>
 </head>
@@ -44,7 +74,7 @@
         <div class="text-center px-6">
             <h1 class="text-6xl font-bold">Integrated Network Group</h1>
             <p class="text-xl mt-4">Securing Your Future with Advanced Security and Networking Solutions</p>
-            <a href="#solutions" class="mt-6 px-8 py-4 bg-red-600 text-white rounded-lg text-lg hover:bg-red-700 transition">Explore Our Solutions</a>
+            <a href="#solutions" class="mt-6 px-8 py-4 bg-white text-primary-red rounded-lg text-lg hover:bg-gray-100 transition">Explore Our Solutions</a>
         </div>
     </header>
 
@@ -52,11 +82,11 @@
     <nav class="bg-gray-800">
         <div class="container mx-auto">
             <ul class="flex justify-center space-x-8 text-white py-4">
-                <li><a href="#solutions" class="hover:text-red-500 transition">Solutions</a></li>
-                <li><a href="#products" class="hover:text-red-500 transition">Products</a></li>
-                <li><a href="#services" class="hover:text-red-500 transition">Services</a></li>
-                <li><a href="#testimonials" class="hover:text-red-500 transition">Testimonials</a></li>
-                <li><a href="#contact" class="hover:text-red-500 transition">Contact</a></li>
+                <li><a href="#solutions" class="hover:text-light-red transition">Solutions</a></li>
+                <li><a href="#products" class="hover:text-light-red transition">Products</a></li>
+                <li><a href="#services" class="hover:text-light-red transition">Services</a></li>
+                <li><a href="#testimonials" class="hover:text-light-red transition">Testimonials</a></li>
+                <li><a href="#contact" class="hover:text-light-red transition">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -66,25 +96,25 @@
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold mb-8">Our Solutions</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-card bg-white p-6 rounded-lg shadow">
+                <div class="service-card p-6 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-4">CCTV Systems</h3>
-                    <p>High-resolution surveillance cameras with night vision and remote monitoring.</p>
+                    <p>High-resolution surveillance cameras with remote monitoring and night vision.</p>
                 </div>
-                <div class="service-card bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4">Time Attendance</h3>
-                    <p>Effective tracking and management of staff attendance with detailed reports.</p>
+                <div class="service-card p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-4">Time Attendance Systems</h3>
+                    <p>Effective tracking and management of staff attendance with detailed reporting.</p>
                 </div>
-                <div class="service-card bg-white p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-4">Access Control</h3>
+                <div class="service-card p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-4">Access Control Systems</h3>
                     <p>Smart locks and advanced access management systems for secure entry control.</p>
                 </div>
-                <div class="service-card bg-white p-6 rounded-lg shadow">
+                <div class="service-card p-6 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-4">Fire Alarm Systems</h3>
                     <p>Comprehensive fire safety solutions to protect your premises and assets.</p>
                 </div>
-                <div class="service-card bg-white p-6 rounded-lg shadow">
+                <div class="service-card p-6 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-4">Automatic Vehicle Location</h3>
-                    <p>Real-time vehicle tracking and fleet management solutions.</p>
+                    <p>Real-time vehicle tracking and fleet management solutions for your business.</p>
                 </div>
             </div>
         </div>
@@ -95,19 +125,19 @@
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold mb-8">Our Products</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow service-card">
+                <div class="product-card p-6 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-4">CCTV Cameras</h3>
                     <p>Models: DS2-CE16D0T-IR, DS2-CE56H0T</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow service-card">
+                <div class="product-card p-6 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-4">Access Control Devices</h3>
                     <p>Devices: Electric Strike, MA500</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow service-card">
+                <div class="product-card p-6 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-4">Fire Alarm Systems</h3>
-                    <p>Includes Smoke Detectors and Flame Detectors</p>
+                    <p>Includes Smoke Detectors, Flame Detectors</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow service-card">
+                <div class="product-card p-6 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-4">Security Inspection Tools</h3>
                     <p>Advanced tools for thorough security inspections.</p>
                 </div>
@@ -118,7 +148,7 @@
     <!-- Testimonials Section -->
     <section id="testimonials" class="py-16">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-8">Client Testimonials</h2>
+            <h2 class="text-4xl font-bold mb-8">What Our Clients Say</h2>
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">"Excellent service and top-quality security solutions!"</div>
@@ -131,47 +161,3 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-100">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-8">Contact Us</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="text-center">
-                    <h3 class="text-xl font-bold mb-4">Main Office</h3>
-                    <p>Khoja Bld, Tahliyah St., Safa - Jeddah</p>
-                    <p>Phone: +966 12 617 3131</p>
-                    <p>Email: info@intnetgroup.com</p>
-                </div>
-                <form class="bg-white p-6 rounded-lg shadow">
-                    <div class="mb-4">
-                        <label class="block mb-2">Name:</label>
-                        <input type="text" class="w-full border rounded p-2" required>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block mb-2">Email:</label>
-                        <input type="email" class="w-full border rounded p-2" required>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block mb-2">Message:</label>
-                        <textarea class="w-full border rounded p-2" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-gray-800 text-white py-6 text-center">
-        &copy; 2024 Integrated Network Group. All Rights Reserved.
-    </footer>
-
-    <!-- Scripts -->
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: { el: '.swiper-pagination', clickable: true }
-        });
-
-        ScrollReveal().reveal('.service-card', { delay: 200, duration: 800, interval: 100 });
-    </script>
-</body>
-</html>
