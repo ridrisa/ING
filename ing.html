@@ -3,159 +3,1029 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Integrated Network Group (ING) - Your trusted partner in security and networking solutions.">
-    <title>Integrated Network Group (ING)</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <title>ING - Integrated Network Group</title>
+    <meta name="description" content="ING provides advanced integrated network and security solutions including CCTV systems, access control, fire alarms, and more.">
+    <meta name="keywords" content="Integrated Network Group, CCTV Systems, Access Control, Fire Alarm Systems, Wireless Networks, Smart Locks, Time Attendance Systems">
+    <meta name="author" content="Integrated Network Group">
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="ING - Integrated Network Group">
+    <meta property="og:description" content="Advanced integrated network and security solutions for modern businesses.">
+    <meta property="og:image" content="https://source.unsplash.com/1600x900/?network,security">
+    <meta property="og:url" content="https://www.intnetgroup.com">
+    <meta property="og:type" content="website">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <style>
-        /* Gradient Styles */
-        .gradient-text {
-            background: linear-gradient(135deg, #C41E3A, #E57373);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        :root {
+            --primary-red: #C41E3A;
+            --dark-red: #8B0000;
+            --black: #000000;
+            --white: #ffffff;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-400: #9ca3af;
+            --gray-600: #4b5563;
+            --gray-800: #1f2937;
+            --transition-speed: 0.3s;
         }
 
-        .card-hover:hover {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            scroll-behavior: smooth;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 0.5rem 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 1rem;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .contact-info i {
+            margin-right: 0.5rem;
+        }
+
+        .language-selector button {
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            font-size: 1rem;
+            transition: color var(--transition-speed);
+        }
+
+        .language-selector button:hover {
+            color: var(--primary-red);
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand img {
+            width: 150px;
+            height: auto;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--black);
+            transition: color var(--transition-speed);
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 1rem;
+            background-image: url('https://source.unsplash.com/1600x900/?security,network');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(196, 30, 58, 0.7);
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .btn-primary {
+            background-color: var(--white);
+            color: var(--primary-red);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gray-100);
+            color: var(--primary-red);
+        }
+
+        /* Sections */
+        .section {
+            padding: 4rem 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            margin-bottom: 3rem;
+            color: var(--black);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-red);
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
+
+        /* Solutions Section */
+        .solutions .card {
+            border: 1px solid var(--gray-200);
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            height: 100%;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .solutions .card:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
 
-        .nav-link:hover {
-            color: #C41E3A;
-            border-bottom: 2px solid #C41E3A;
+        .solutions .card i {
+            font-size: 2rem;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .solutions .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: none; /* Initially hidden; can be displayed if needed */
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--gray-100);
+        }
+
+        .features .icon {
+            font-size: 2rem;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--gray-200);
+        }
+
+        .testimonial-item {
+            padding: 2rem;
+            background-color: var(--white);
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-item h5 {
+            color: var(--primary-red);
+            align-self: flex-end;
+        }
+
+        /* About Us Section */
+        .about img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Locations Section */
+        .locations h5 {
+            margin-bottom: 1rem;
+            color: var(--primary-red);
+        }
+
+        .map-responsive {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .map-responsive iframe {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border:0;
+        }
+
+        /* Support Section */
+        .support .accordion-button {
+            background-color: var(--gray-100);
+            color: var(--black);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        .support .accordion-button:after {
+            filter: invert(1);
+        }
+
+        /* Blog/News Section */
+        .blog .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Contact Section */
+        .contact .form-control:focus {
+            border-color: var(--primary-red);
+            box-shadow: none;
+        }
+
+        .contact .btn-submit {
+            background-color: var(--primary-red);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            transition: background-color var(--transition-speed);
+        }
+
+        .contact .btn-submit:hover {
+            background-color: var(--dark-red);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--gray-400);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--primary-red);
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: color var(--transition-speed);
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        .social-links a {
+            color: var(--gray-400);
+            margin: 0 0.5rem;
+            font-size: 1.25rem;
+            transition: color var(--transition-speed);
+        }
+
+        .social-links a:hover {
+            color: var(--primary-red);
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .testimonial-item {
+                min-height: unset;
+            }
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
-
-    <!-- Navigation Bar -->
-    <nav class="bg-white shadow fixed w-full z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="logo.jpeg" alt="ING Logo" class="w-12 h-12 mr-4">
-                <h1 class="text-xl font-bold gradient-text">Integrated Network Group</h1>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="contact-info">
+                <span><i class="fas fa-phone"></i> +966 12 617 3131</span>
+                <span><i class="fas fa-envelope"></i> info@intnetgroup.com</span>
             </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#solutions" class="nav-link text-gray-700">Solutions</a>
-                <a href="#products" class="nav-link text-gray-700">Products</a>
-                <a href="#services" class="nav-link text-gray-700">Services</a>
-                <a href="#testimonials" class="nav-link text-gray-700">Testimonials</a>
-                <a href="#contact" class="nav-link text-gray-700">Contact</a>
-            </div>
-            <button class="md:hidden text-gray-700">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="relative bg-gradient-to-br from-red-700 to-red-400 text-white py-20 flex justify-center items-center">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl md:text-6xl font-bold">Integrated Network Group</h2>
-            <p class="mt-4 text-lg md:text-xl">Leading provider of cutting-edge security and networking solutions.</p>
-            <div class="mt-8 flex justify-center space-x-4">
-                <a href="#solutions" class="px-6 py-3 bg-white text-red-600 font-semibold rounded-lg shadow-lg hover:bg-gray-100">
-                    Explore Solutions
-                </a>
-                <a href="#contact" class="px-6 py-3 bg-transparent border border-white text-white font-semibold rounded-lg hover:bg-white/10">
-                    Contact Us
-                </a>
+            <div class="language-selector">
+                <button id="lang-en" aria-label="Switch to English">English</button> |
+                <button id="lang-ar" aria-label="Switch to Arabic">عربي</button>
             </div>
         </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.jpeg" alt="ING Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Products & Services
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="productsDropdown">
+                                <li><a class="dropdown-item" href="#cctv">CCTV Systems</a></li>
+                                <li><a class="dropdown-item" href="#time-attendance">Time Attendance Systems</a></li>
+                                <li><a class="dropdown-item" href="#access-control">Access Control & Smart Locks</a></li>
+                                <li><a class="dropdown-item" href="#fire-alarm">Fire Alarm Systems</a></li>
+                                <li><a class="dropdown-item" href="#wireless-networks">Wireless Networks</a></li>
+                                <li><a class="dropdown-item" href="#wired-networks">Wired Networks</a></li>
+                                <li><a class="dropdown-item" href="#advanced-technologies">Advanced Technologies</a></li>
+                                <li><a class="dropdown-item" href="#integrated-systems">Integrated Systems</a></li>
+                                <li><a class="dropdown-item" href="#sound-systems">Sound Systems</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#locations">Locations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#support">Support</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
 
+    <!-- Hero Section -->
+    <section id="hero" class="hero" data-aos="fade-in">
+        <div class="container">
+            <h1 data-aos="fade-down">Securing Your Future</h1>
+            <p data-aos="fade-up">Integrated security and network solutions for modern businesses</p>
+            <a href="#solutions" class="btn btn-primary" data-aos="zoom-in">Explore Solutions</a>
+        </div>
+    </section>
+
     <!-- Solutions Section -->
-    <section id="solutions" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-bold text-center gradient-text mb-8">Our Solutions</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-hover bg-white rounded-lg shadow p-6 text-center">
-                    <i class="fas fa-video text-red-600 text-3xl mb-4"></i>
-                    <h4 class="font-semibold text-xl">CCTV Systems</h4>
-                    <p class="text-gray-600 mt-2">Advanced video surveillance with AI-powered analytics, night vision, and remote monitoring.</p>
+    <section id="solutions" class="section solutions" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Our Solutions</h2>
+            <div class="row g-4">
+                <!-- CCTV Systems -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fas fa-video"></i>
+                        <h5>CCTV Systems</h5>
+                        <p>High-resolution surveillance cameras with remote monitoring and night vision.</p>
+                        <a href="#cctv" class="btn btn-primary mt-3">Learn More</a>
+                    </div>
                 </div>
-                <div class="card-hover bg-white rounded-lg shadow p-6 text-center">
-                    <i class="fas fa-clock text-red-600 text-3xl mb-4"></i>
-                    <h4 class="font-semibold text-xl">Time Attendance</h4>
-                    <p class="text-gray-600 mt-2">Facial recognition and biometric systems for seamless time tracking and attendance management.</p>
+                <!-- Time Attendance Systems -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fas fa-clock"></i>
+                        <h5>Time Attendance</h5>
+                        <p>Employee time tracking and management solutions using biometric or RFID technology.</p>
+                        <a href="#time-attendance" class="btn btn-primary mt-3">Learn More</a>
+                    </div>
                 </div>
-                <div class="card-hover bg-white rounded-lg shadow p-6 text-center">
-                    <i class="fas fa-lock text-red-600 text-3xl mb-4"></i>
-                    <h4 class="font-semibold text-xl">Access Control</h4>
-                    <p class="text-gray-600 mt-2">Secure access with smart locks, multi-factor authentication, and remote monitoring.</p>
+                <!-- Access Control & Smart Locks -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fas fa-lock"></i>
+                        <h5>Access Control</h5>
+                        <p>Smart locks and advanced access control systems integrated with alarms and sensors.</p>
+                        <a href="#access-control" class="btn btn-primary mt-3">Learn More</a>
+                    </div>
                 </div>
-                <div class="card-hover bg-white rounded-lg shadow p-6 text-center">
-                    <i class="fas fa-shield-alt text-red-600 text-3xl mb-4"></i>
-                    <h4 class="font-semibold text-xl">Fire Alarm Systems</h4>
-                    <p class="text-gray-600 mt-2">Reliable fire detection and alarm systems to ensure workplace and home safety.</p>
+                <!-- Fire Alarm Systems -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fas fa-fire"></i>
+                        <h5>Fire Alarm Systems</h5>
+                        <p>Advanced fire detection and emergency response systems to ensure safety.</p>
+                        <a href="#fire-alarm" class="btn btn-primary mt-3">Learn More</a>
+                    </div>
                 </div>
-                <div class="card-hover bg-white rounded-lg shadow p-6 text-center">
-                    <i class="fas fa-car text-red-600 text-3xl mb-4"></i>
-                    <h4 class="font-semibold text-xl">Vehicle Tracking</h4>
-                    <p class="text-gray-600 mt-2">Real-time fleet tracking with GPS systems for complete vehicle management.</p>
+                <!-- Wireless Networks -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fas fa-wifi"></i>
+                        <h5>Wireless Networks</h5>
+                        <p>High-speed WiFi solutions and microwave connectivity for long-distance links.</p>
+                        <a href="#wireless-networks" class="btn btn-primary mt-3">Learn More</a>
+                    </div>
+                </div>
+                <!-- Wired Networks -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="600">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fas fa-network-wired"></i>
+                        <h5>Wired Networks</h5>
+                        <p>Ethernet networks, fiber optics, routers, switches, and structured cabling solutions.</p>
+                        <a href="#wired-networks" class="btn btn-primary mt-3">Learn More</a>
+                    </div>
+                </div>
+                <!-- Advanced Technologies -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="700">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fas fa-car"></i>
+                        <h5>Advanced Technologies</h5>
+                        <p>Live GPS tracking, fleet management, and automatic vehicle location systems.</p>
+                        <a href="#advanced-technologies" class="btn btn-primary mt-3">Learn More</a>
+                    </div>
+                </div>
+                <!-- Integrated Systems -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="800">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fas fa-building"></i>
+                        <h5>Integrated Systems</h5>
+                        <p>Hotel lock systems, security inspections, x-ray scanners, and metal detectors.</p>
+                        <a href="#integrated-systems" class="btn btn-primary mt-3">Learn More</a>
+                    </div>
+                </div>
+                <!-- Sound Systems -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="900">
+                    <div class="card p-3 text-center h-100">
+                        <i class="fas fa-music"></i>
+                        <h5>Sound Systems</h5>
+                        <p>High-quality audio integration and public address systems for various venues.</p>
+                        <a href="#sound-systems" class="btn btn-primary mt-3">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Products Section -->
-    <section id="products" class="py-16 bg-white">
-        <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-bold text-center gradient-text mb-8">Our Products</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-hover bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                    <img src="/api/placeholder/400/300" alt="CCTV Camera" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold mb-2">CCTV Cameras</h4>
-                        <p class="text-gray-600">High-definition cameras with night vision and AI-powered analytics.</p>
-                        <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">Learn More</button>
+    <!-- Detailed Products & Services Sections -->
+    <!-- CCTV Systems -->
+    <section id="cctv" class="section">
+        <div class="container">
+            <h2 class="section-title">CCTV Systems</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <img src="https://source.unsplash.com/600x400/?cctv,security-camera" alt="CCTV Systems" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <p>Our CCTV Systems provide high-definition surveillance with night vision and remote monitoring capabilities. Whether you need 2MP, 4MP, or 8MP resolution cameras, we have solutions tailored to your security needs.</p>
+                    <ul>
+                        <li>High-definition cameras with night vision</li>
+                        <li>Remote monitoring via mobile and desktop devices</li>
+                        <li>Digital surveillance with IP cameras ranging from 2MP to 8MP resolution</li>
+                        <li>Scalable systems suitable for small businesses to large enterprises</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Time Attendance Systems -->
+    <section id="time-attendance" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Time Attendance Systems</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 order-md-2" data-aos="fade-left">
+                    <img src="https://source.unsplash.com/600x400/?time-attendance,biometric" alt="Time Attendance Systems" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6 order-md-1" data-aos="fade-right">
+                    <p>Manage your staff attendance efficiently with our Time Attendance Systems. Utilizing biometric or RFID technology, our devices ensure accurate tracking and seamless integration with your existing HR systems.</p>
+                    <ul>
+                        <li>Biometric and RFID technology for accurate attendance tracking</li>
+                        <li>Dual-language support (Arabic and English) for ease of use</li>
+                        <li>Automatic deduction options for payroll integration</li>
+                        <li>Comprehensive management software for real-time monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Access Control & Smart Locks -->
+    <section id="access-control" class="section">
+        <div class="container">
+            <h2 class="section-title">Access Control & Smart Locks</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <img src="https://source.unsplash.com/600x400/?access-control,smart-lock" alt="Access Control & Smart Locks" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <p>Enhance your security with our advanced Access Control systems and Smart Locks. Control access for individuals, vehicles, and goods using cutting-edge biometric systems, and integrate seamlessly with alarms, door sensors, and remotes.</p>
+                    <ul>
+                        <li>Advanced biometric systems for precise access control</li>
+                        <li>Integration with alarms, door sensors, and remotes</li>
+                        <li>Smart locks for enhanced security and convenience</li>
+                        <li>Scalable solutions suitable for various environments</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fire Alarm Systems -->
+    <section id="fire-alarm" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Fire Alarm Systems</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 order-md-2" data-aos="fade-left">
+                    <img src="https://source.unsplash.com/600x400/?fire-alarm,safety" alt="Fire Alarm Systems" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6 order-md-1" data-aos="fade-right">
+                    <p>Protect your assets and ensure safety with our state-of-the-art Fire Alarm Systems. Our solutions include advanced fire detection technologies and integrated emergency response systems designed to provide early warnings and efficient evacuation procedures.</p>
+                    <ul>
+                        <li>Advanced fire detection sensors for early warning</li>
+                        <li>Integrated emergency response systems</li>
+                        <li>Seamless integration with existing security infrastructure</li>
+                        <li>Compliance with international safety standards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wireless Networks -->
+    <section id="wireless-networks" class="section">
+        <div class="container">
+            <h2 class="section-title">Wireless Networks</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <img src="https://source.unsplash.com/600x400/?wireless-network,technology" alt="Wireless Networks" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <p>Ensure seamless connectivity with our Wireless Networks solutions. We offer high-speed WiFi solutions tailored for hotels, hospitals, and public areas, as well as microwave connectivity for long-distance links up to 30 kilometers.</p>
+                    <ul>
+                        <li>High-speed WiFi solutions for various environments</li>
+                        <li>Microwave connectivity for reliable long-distance links</li>
+                        <li>Robust network infrastructure for uninterrupted service</li>
+                        <li>Scalable solutions to accommodate growing network demands</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wired Networks -->
+    <section id="wired-networks" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Wired Networks</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 order-md-2" data-aos="fade-left">
+                    <img src="https://source.unsplash.com/600x400/?wired-network,cabling" alt="Wired Networks" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6 order-md-1" data-aos="fade-right">
+                    <p>Build a reliable and efficient network infrastructure with our Wired Networks solutions. From Ethernet networks and fiber optics to distribution cabinets, routers, switches, and structured cabling, we provide comprehensive solutions to meet your connectivity needs.</p>
+                    <ul>
+                        <li>Ethernet networks for high-speed data transmission</li>
+                        <li>Fiber optics for enhanced performance and reliability</li>
+                        <li>Distribution cabinets and structured cabling solutions</li>
+                        <li>Advanced routers and switches for optimal network management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Technologies -->
+    <section id="advanced-technologies" class="section">
+        <div class="container">
+            <h2 class="section-title">Advanced Technologies</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <img src="https://source.unsplash.com/600x400/?gps-tracking,fleet-management" alt="Advanced Technologies" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <p>Optimize your fleet management with our Advanced Technologies solutions. Our Automatic Vehicle Location (AVL) systems offer live GPS tracking, comprehensive reports, speed violation alerts, and geofencing notifications to enhance operational efficiency and security.</p>
+                    <ul>
+                        <li>Live GPS tracking for real-time fleet monitoring</li>
+                        <li>Comprehensive reporting tools for performance analysis</li>
+                        <li>Speed violation alerts and geofencing notifications</li>
+                        <li>Seamless integration with existing fleet management systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrated Systems -->
+    <section id="integrated-systems" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Integrated Systems</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 order-md-2" data-aos="fade-left">
+                    <img src="https://source.unsplash.com/600x400/?hotel-lock,security-inspection" alt="Integrated Systems" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6 order-md-1" data-aos="fade-right">
+                    <p>Our Integrated Systems provide comprehensive solutions for various industries. From contactless hotel lock systems with Mifare card technology to security inspections using x-ray scanners and metal detectors, we ensure seamless and secure operations.</p>
+                    <ul>
+                        <li>Contactless hotel lock systems with Mifare card technology</li>
+                        <li>Easy management software for hotels</li>
+                        <li>Security inspections with x-ray scanners and metal detectors</li>
+                        <li>Integrated solutions for enhanced operational efficiency</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sound Systems -->
+    <section id="sound-systems" class="section">
+        <div class="container">
+            <h2 class="section-title">Sound Systems</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <img src="https://source.unsplash.com/600x400/?sound-system,audio" alt="Sound Systems" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <p>Deliver high-quality audio experiences with our Sound Systems solutions. Suitable for mosques, hospitals, malls, and conference rooms, our systems integrate seamlessly to provide clear and reliable sound for various environments.</p>
+                    <ul>
+                        <li>High-quality audio integration for clear sound</li>
+                        <li>Public address systems tailored for different venues</li>
+                        <li>Reliable and scalable solutions for various environments</li>
+                        <li>Seamless integration with existing infrastructure</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section features" data-aos="fade-up">
+        <div class="container text-center">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <i class="fas fa-shield-alt icon"></i>
+                        <h5>Advanced Security</h5>
+                        <p>State-of-the-art protection systems ensuring maximum safety.</p>
                     </div>
                 </div>
-                <div class="card-hover bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                    <img src="/api/placeholder/400/300" alt="Access Control" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold mb-2">Access Control Systems</h4>
-                        <p class="text-gray-600">Smart access systems including biometric locks and RFID technology.</p>
-                        <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">Learn More</button>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div>
+                        <i class="fas fa-network-wired icon"></i>
+                        <h5>Smart Integration</h5>
+                        <p>Seamless network connectivity and system integrations.</p>
                     </div>
                 </div>
-                <div class="card-hover bg-gray-100 rounded-lg shadow-lg overflow-hidden">
-                    <img src="/api/placeholder/400/300" alt="Fire Alarm" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold mb-2">Fire Alarm Systems</h4>
-                        <p class="text-gray-600">Comprehensive fire detection systems for maximum safety.</p>
-                        <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700">Learn More</button>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <i class="fas fa-headset icon"></i>
+                        <h5>24/7 Support</h5>
+                        <p>Round-the-clock technical assistance and customer service.</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-item">
+                            <p>"ING provided us with top-notch CCTV systems that have greatly enhanced our security."</p>
+                            <h5>- Ahmed Al-Farsi</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-item">
+                            <p>"Their access control solutions are reliable and easy to integrate with our existing systems."</p>
+                            <h5>- Sara Khalid</h5>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial-item">
+                            <p>"Exceptional support and service. ING's team was always available to assist us."</p>
+                            <h5>- Mohammed Saleh</h5>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle p-3" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="section about" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6" data-aos="fade-right">
+                    <p>Integrated Network Group (ING) is a leading provider of comprehensive security and network solutions. Our mission is to deliver innovative and reliable products and services that meet the evolving needs of our clients.</p>
+                    <p>With a dedicated team of experts, ING focuses on integrating advanced technologies to ensure maximum security, efficiency, and connectivity for businesses across various industries.</p>
+                    <h5>Our Mission</h5>
+                    <p>To provide cutting-edge integrated network and security solutions that empower businesses to operate securely and efficiently.</p>
+                    <h5>Our Vision</h5>
+                    <p>To be the most trusted partner in integrated network and security solutions, recognized for our innovation, reliability, and exceptional customer service.</p>
+                    <h5>Our Team</h5>
+                    <p>Our team comprises industry experts with extensive experience in network engineering, security systems, and customer support, dedicated to delivering excellence in every project.</p>
+                    <h5>Careers</h5>
+                    <p>Join our dynamic team and contribute to innovative projects that shape the future of network and security solutions. <a href="#">Explore current opportunities.</a></p>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <img src="https://source.unsplash.com/600x400/?office,team" alt="About Us" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="section locations" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Our Locations</h2>
+            <div class="row g-4">
+                <!-- Main Office -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <h5>Main Office</h5>
+                    <p>Khoja Bld, Tahliyah St., Safa, Jeddah.</p>
+                    <p><i class="fas fa-phone"></i> +966 12 617 3131</p>
+                    <p><i class="fas fa-envelope"></i> info@intnetgroup.com</p>
+                    <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." loading="lazy" title="Main Office Location"></iframe>
+                    </div>
+                </div>
+                <!-- Construction City Branch -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <h5>Construction City Branch</h5>
+                    <p>E9 Madina Rd, Alnuzha, Jeddah.</p>
+                    <p><i class="fas fa-phone"></i> +966 12 655 4646</p>
+                    <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." loading="lazy" title="Construction City Branch Location"></iframe>
+                    </div>
+                </div>
+                <!-- Baladiyah St. Branch -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <h5>Baladiyah St. Branch</h5>
+                    <p>Ba Gabas Center, Baladiyah St., Alaziziyah, Jeddah.</p>
+                    <p><i class="fas fa-phone"></i> +966 12 655 4646</p>
+                    <div class="map-responsive">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." loading="lazy" title="Baladiyah St. Branch Location"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="section support" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Support</h2>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <h5>Contact Us</h5>
+                    <form action="#" method="POST">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email" aria-label="Email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Message" aria-label="Message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit w-100">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <h5>FAQs</h5>
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    What services does ING offer?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    ING offers a wide range of services including CCTV Systems, Time Attendance Systems, Access Control & Smart Locks, Fire Alarm Systems, Wireless Networks, Wired Networks, Advanced Technologies, Integrated Systems, and Sound Systems.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    How can I get a quote for a service?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    You can get a quote by filling out the contact form on our Contact page or by reaching out to any of our branch offices directly via phone or email.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faqThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    Do you provide installation and maintenance services?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, ING provides comprehensive installation and maintenance services for all our products to ensure optimal performance and longevity.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Add more FAQs as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/News Section -->
+    <section id="blog" class="section blog" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Latest News</h2>
+            <div class="row g-4">
+                <!-- Blog Post 1 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="https://source.unsplash.com/600x400/?cctv,security" class="card-img-top" alt="Enhancing Security with Advanced CCTV Systems" loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Enhancing Security with Advanced CCTV Systems</h5>
+                            <p class="card-text">Discover how our latest CCTV solutions provide unparalleled security for your business.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 2 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="https://source.unsplash.com/600x400/?smart-lock,access-control" class="card-img-top" alt="Integrating Smart Locks for Enhanced Access Control" loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Integrating Smart Locks for Enhanced Access Control</h5>
+                            <p class="card-text">Learn about the benefits of implementing smart lock systems in your organization.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 3 -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="https://source.unsplash.com/600x400/?attendance,biometric" class="card-img-top" alt="Optimizing Workforce Management with Time Attendance Systems" loading="lazy">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Optimizing Workforce Management with Time Attendance Systems</h5>
+                            <p class="card-text">Explore how our time attendance solutions streamline employee management.</p>
+                            <a href="#" class="btn btn-primary mt-auto">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more blog posts as needed -->
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-bold text-center gradient-text mb-8">Get in Touch</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-white rounded-lg shadow-lg p-8">
-                    <h4 class="text-xl font-bold mb-4">Contact Information</h4>
-                    <p class="text-gray-600 mb-4"><i class="fas fa-map-marker-alt text-red-600"></i> Khoja Bld, Tahliyah St., Safa - Jeddah</p>
-                    <p class="text-gray-600 mb-4"><i class="fas fa-phone text-red-600"></i> +966 12 617 3131</p>
-                    <p class="text-gray-600 mb-4"><i class="fas fa-envelope text-red-600"></i> info@intnetgroup.com</p>
+    <section id="contact" class="section contact" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-right">
+                    <p>Contact our team for customized security and network solutions tailored to your business needs.</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Khoja Bld, Tahliyah St., Jeddah</p>
+                    <p><i class="fas fa-phone"></i> +966 12 617 3131</p>
+                    <p><i class="fas fa-envelope"></i> info@intnetgroup.com</p>
                 </div>
-                <form class="bg-white rounded-lg shadow-lg p-8">
-                    <h4 class="text-xl font-bold mb-4">Send Us a Message</h4>
-                    <input type="text" class="w-full mb-4 px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600" placeholder="Your Name" required>
-                    <input type="email" class="w-full mb-4 px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600" placeholder="Your Email" required>
-                    <textarea class="w-full mb-4 px-4 py-3 border rounded-lg focus:ring-2 focus:ring-red-600" placeholder="Your Message" rows="5" required></textarea>
-                    <button type="submit" class="w-full bg-red-600 text-white px-4 py-3 rounded-lg hover:bg-red-700">Send Message</button>
-                </form>
+                <div class="col-md-6" data-aos="fade-left">
+                    <form action="#" method="POST">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Name" aria-label="Name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email" aria-label="Email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Message" aria-label="Message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit w-100">Send Message</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-white text-center py-4">
-        <p>&copy; 2024 Integrated Network Group. All Rights Reserved.</p>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 ING. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </footer>
 
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS (Animate On Scroll) JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Optional: Language Switching Functionality
+        document.getElementById('lang-en').addEventListener('click', function() {
+            // Implement language switch to English
+            alert('Switched to English');
+        });
+
+        document.getElementById('lang-ar').addEventListener('click', function() {
+            // Implement language switch to Arabic
+            alert('تم التحويل إلى العربية');
+        });
+    </script>
 </body>
 </html>
