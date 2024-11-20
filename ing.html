@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ING - Integrated Network Group</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #C41E3A;
+            --dark-red: #8B0000;
+            --black: #000000;
+            --white: #ffffff;
+            --gray-100: #f3f4f6;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero {
+            background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        .solutions, .products, .branches, .contact {
+            padding: 4rem 1rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+        }
+        .branches ul, .products ul {
+            list-style: none;
+            padding: 0;
+        }
+        .branches ul li, .products ul li {
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            background: var(--black);
+            color: var(--gray-100);
+            text-align: center;
+            padding: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Integrated Network Group</h1>
+        <p>Delivering comprehensive security and networking solutions to secure your future.</p>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions">
+        <div class="container">
+            <h2 class="section-title">Our Solutions</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>CCTV Systems</h5>
+                    <p>High-resolution cameras, night vision, and remote monitoring.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Time Attendance Systems</h5>
+                    <p>Advanced tracking and attendance management solutions.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Access Control & Smart Locks</h5>
+                    <p>Secure access systems with biometric and RFID capabilities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>CCTV Systems</h5>
+                    <ul>
+                        <li>DS2-CE16D0T-IR</li>
+                        <li>DS2-TD50-6166B2L</li>
+                        <li>DS2-CEE56D6T</li>
+                        <li>DS2-CE56H0T</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Time Attendance Systems</h5>
+                    <ul>
+                        <li>UA400</li>
+                        <li>UFACE 800</li>
+                        <li>SFACE 900</li>
+                        <li>MB460</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <h5>Access Control & Smart Locks</h5>
+                    <ul>
+                        <li>SKW-V2</li>
+                        <li>MA500</li>
+                        <li>FBL4000</li>
+                        <li>Electric Strike</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h5>Hotel Lock Systems</h5>
+                    <ul>
+                        <li>LH6500</li>
+                        <li>LH4000</li>
+                        <li>LH5000</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Branches Section -->
+    <section id="branches" class="branches">
+        <div class="container">
+            <h2 class="section-title">Our Branches</h2>
+            <ul>
+                <li><strong>Main Office:</strong> Khoja Bld, Tahliyah St. Safa - Jeddah | 0126173131 | info@intnetgroup.com</li>
+                <li><strong>Construction City Branch:</strong> E9, Madina Rd, Alnuzha, Jeddah | 0126554646 | sales1@intnetgroup.com</li>
+                <li><strong>Baladiyah St. Branch:</strong> Ba Gabas Center - Baladiyah St., Alaziziyah, Jeddah | 0126554646 | sales2@intnetgroup.com</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <form>
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Email" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" rows="4" placeholder="Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ING. All Rights Reserved. <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
