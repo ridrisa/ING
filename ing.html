@@ -25,10 +25,10 @@
             background: linear-gradient(45deg, var(--primary-red), var(--dark-red));
             color: var(--white);
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 6rem 1rem;
         }
 
-        .solutions, .products, .branches, .contact {
+        .solutions, .products, .services, .branches, .contact {
             padding: 4rem 1rem;
         }
 
@@ -38,12 +38,12 @@
             font-size: 2.5rem;
         }
 
-        .branches ul, .products ul {
+        .services ul, .branches ul, .products ul {
             list-style: none;
             padding: 0;
         }
 
-        .branches ul li, .products ul li {
+        .services ul li, .branches ul li, .products ul li {
             margin-bottom: 0.5rem;
         }
 
@@ -58,65 +58,66 @@
             color: var(--primary-red);
             text-decoration: none;
         }
+
+        .cta-section {
+            background: var(--gray-100);
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        .testimonials {
+            background: var(--gray-200);
+            padding: 4rem 1rem;
+        }
+
+        .testimonial {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial p {
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
     <section class="hero">
         <h1>Integrated Network Group</h1>
-        <p>Delivering comprehensive security and networking solutions to secure your future.</p>
+        <p>Your Trusted Partner for Security and Networking Solutions</p>
         <a href="#solutions" class="btn btn-light">Explore Solutions</a>
     </section>
 
     <!-- Solutions Section -->
     <section id="solutions" class="solutions">
         <div class="container">
-            <h2 class="section-title">Our Solutions</h2>
+            <h2 class="section-title">Our Key Solutions</h2>
             <div class="row">
                 <div class="col-md-4">
                     <h5>CCTV Systems</h5>
-                    <p>High-resolution cameras, night vision, and remote monitoring with guaranteed reliability.</p>
+                    <p>High-resolution cameras with night vision and remote monitoring.</p>
                     <ul>
-                        <li>Supports digital and HD cameras (2MP to 8MP)</li>
-                        <li>Remote access via mobile or laptop</li>
-                        <li>Wireless camera installation</li>
+                        <li>Digital and HD Cameras (2MP to 8MP)</li>
+                        <li>Wireless installation</li>
+                        <li>Remote monitoring via apps</li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h5>Time Attendance Systems</h5>
-                    <p>Streamline employee management with accurate attendance and reporting.</p>
+                    <p>Accurate employee tracking and reporting for enhanced management.</p>
                     <ul>
-                        <li>Biometric and RFID systems</li>
-                        <li>Daily, weekly, and monthly reports</li>
+                        <li>Biometric systems</li>
                         <li>Multilingual support (Arabic & English)</li>
+                        <li>Customizable reports</li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h5>Access Control & Smart Locks</h5>
-                    <p>Secure access with biometric authentication, RFID, and password-based systems.</p>
+                    <p>Advanced entry control solutions for maximum security.</p>
                     <ul>
-                        <li>Supports integration with alarms and door sensors</li>
-                        <li>Weather-resistant external devices</li>
-                        <li>Remote control and real-time monitoring</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <h5>Hotel Lock Systems</h5>
-                    <p>Advanced Mifare card technology for seamless hotel management.</p>
-                    <ul>
-                        <li>Master card management</li>
-                        <li>Flexible programming and high reliability</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <h5>Security Inspection</h5>
-                    <p>Comprehensive solutions for screening individuals, vehicles, and shipments.</p>
-                    <ul>
-                        <li>X-ray scanners</li>
-                        <li>Metal detectors and handheld scanners</li>
-                        <li>Explosive and narcotic detection devices</li>
+                        <li>Biometric and RFID integration</li>
+                        <li>Weather-resistant devices</li>
+                        <li>Remote monitoring and control</li>
                     </ul>
                 </div>
             </div>
@@ -126,40 +127,64 @@
     <!-- Products Section -->
     <section id="products" class="products">
         <div class="container">
-            <h2 class="section-title">Our Products</h2>
+            <h2 class="section-title">Our Product Range</h2>
             <div class="row">
-                <div class="col-md-4">
-                    <h5>CCTV Systems</h5>
+                <div class="col-md-6">
+                    <h5>CCTV Cameras</h5>
                     <ul>
                         <li>DS2-CE16D0T-IR</li>
-                        <li>DS2-TD50-6166B2L</li>
-                        <li>DS2-CEE56D6T</li>
                         <li>DS2-CE56H0T</li>
+                        <li>DS2-TD50-6166B2L</li>
                         <li>DS2-CE16H0T-ITF</li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h5>Time Attendance Systems</h5>
+                <div class="col-md-6">
+                    <h5>Access Control</h5>
                     <ul>
-                        <li>UA400</li>
-                        <li>UFACE 800</li>
-                        <li>SFACE 900</li>
-                        <li>MB460</li>
-                        <li>U-260C</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5>Access Control & Smart Locks</h5>
-                    <ul>
-                        <li>SKW-V2</li>
                         <li>MA500</li>
-                        <li>FBL4000</li>
                         <li>Electric Strike</li>
                         <li>Yale Lock</li>
+                        <li>SKW-V2</li>
                     </ul>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <ul>
+                <li>Design, Installation, and Maintenance of Security Systems</li>
+                <li>Advanced Fire Alarm Systems</li>
+                <li>PBX & IP PBX Setup</li>
+                <li>Security Inspection Devices</li>
+                <li>Automatic Vehicle Location Systems</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="testimonial">
+                <p>"ING provided us with top-notch security solutions. Highly recommend!"</p>
+                <h6>- Sarah A., Jeddah</h6>
+            </div>
+            <div class="testimonial">
+                <p>"Their team was professional, and the CCTV systems are seamless!"</p>
+                <h6>- Mohammed B., Riyadh</h6>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Secure Your Business?</h2>
+        <p>Contact us today to learn more about our solutions and products.</p>
+        <a href="#contact" class="btn btn-danger">Get in Touch</a>
     </section>
 
     <!-- Branches Section -->
